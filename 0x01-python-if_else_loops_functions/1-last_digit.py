@@ -4,10 +4,11 @@ number = random.randint(-10000, 10000)
 
 if number < 0:
     num = number * -1
+    mod = (num % 10) * -1
 else:
     num = number
+    mod = num % 10
 
-mod = num % 10
 if mod == 0:
     print(f"Last digit of {number} is {mod} and is 0")
 elif mod > 5:
