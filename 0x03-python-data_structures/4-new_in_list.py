@@ -11,3 +11,4 @@ def new_in_list(my_list, idx, element):
         else:
             new_list.append(item)
         i += 1
+    return new_list
