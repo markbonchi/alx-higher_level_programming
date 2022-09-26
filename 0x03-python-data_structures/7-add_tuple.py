@@ -6,7 +6,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
             tup = (tup[0], 0)
             return tup
         elif len(tup) == 0:
-            tup =(0, 0)
+            tup = (0, 0)
             return tup
         else:
             return tup
