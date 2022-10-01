@@ -25,13 +25,10 @@ def roman_to_int(roman_string):
         else:
             return 0
 
-    if 'IV' or 'IX' in roman_string:
-        number -= 2 * roman_string.count('IV')
-        number -= 2 * roman_string.count('IX')
-    elif 'XL' or 'XC' in roman_string:
-        number -= 20 * roman_string.count('XL')
-        number -= 20 * roman_string.count('XC')
-    elif 'CD' or 'CM' in roman_string:
-        number -= 200 * roman_string.count('CD')
-        number -= 200 * roman_string.count('CM')
+    number -= 2 * roman_string.count('IV')
+    number -= 2 * roman_string.count('IX')
+    number -= 20 * roman_string.count('XL')
+    number -= 20 * roman_string.count('XC')
+    number -= 200 * roman_string.count('CD')
+    number -= 200 * roman_string.count('CM')
     return number
