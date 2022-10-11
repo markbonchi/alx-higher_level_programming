@@ -51,9 +51,10 @@ class Square:
         '''
         prints square in stdout with character #
         '''
-        for i in range(self.__size):
-            for j in range(self.__size):
-                print('#', end='')
+        if self.__size == 0:
             print()
         else:
-            print()
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print('#', end='')
+                print()
