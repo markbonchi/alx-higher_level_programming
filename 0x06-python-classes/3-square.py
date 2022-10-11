@@ -20,5 +20,5 @@ class Square:
 
     def area(self):
         '''int: area of square'''
-        x = int(self.__size) * int(self.__size)
+        x = int(self.__size)**2
         return int(x)
