@@ -13,19 +13,9 @@ class Rectangle:
     '''
 
     def __init__(self, width=0, height=0):
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must b >= 0")
-        else:
-            self.width = width
-
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must b >= 0")
-        else:
-            self.height = height
+        '''Initialisation with args width and height'''
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
