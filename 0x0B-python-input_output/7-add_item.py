@@ -9,11 +9,11 @@ load_json = __import__("6-load_from_json_file").load_from_json_file
 
 if __name__ == "__main__":
     filename = "add_item.json"
-    with open(filename, "w", encoding="utf-8") as f:
-        try:
-            my_list = load_json(filename)
-        except Exception as err:
-            f.write(json.dumps(argv[1:]))
-        else:
-            new_list = my_list + argv[1:]
-            save_json(new_list, filename)
+
+    try:
+        my_list = load_json(filename)
+    except Exception:
+        save_json(argv[1:], filename)
+    else:
+        new_list = my_list + argv[1:]
+        save_json(new_list, filename)
