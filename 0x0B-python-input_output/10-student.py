@@ -24,7 +24,7 @@ class Student:
             attrs: (list)
         """
         my_dict = self.__dict__.copy()
-        if attrs == None:
+        if attrs is None:
             return my_dict
         else:
             my_list = [i for i in my_dict.keys()]
