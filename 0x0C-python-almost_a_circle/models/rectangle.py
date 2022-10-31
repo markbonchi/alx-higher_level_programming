@@ -131,6 +131,9 @@ class Rectangle(Base):
             print()
 
     def update(self, *args):
+        """
+        updates private attributes in class
+        """
         my_list = []
         [my_list.append(i) for i in args]
         if len(my_list) > 0:
