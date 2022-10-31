@@ -130,6 +130,44 @@ class Rectangle(Base):
             [print("#", end='') for i in range(self.__width)]
             print()
 
+    def update(self, *args):
+        my_list = []
+        [my_list.append(i) for i in args]
+        if len(my_list) > 0:
+            self.id = my_list[0]
+        if len(my_list) > 1:
+            value = my_list[1]
+            if not isinstance(value, int):
+                raise TypeError("width must be an integer")
+            elif value < 0:
+                raise ValueError("width must be > 0")
+            else:
+                self.__width = value
+        if len(my_list) > 2:
+            value = my_list[2]
+            if not isinstance(value, int):
+                raise TypeError("height must be an integer")
+            elif value < 0:
+                raise ValueError("height must be > 0")
+            else:
+                self.__height = value
+        if len(my_list) > 3:
+            value = my_list[3]
+            if not isinstance(value, int):
+                raise TypeError("x must be an integer")
+            elif value < 0:
+                raise ValueError("x must be > 0")
+            else:
+                self.__x = value
+        if len(my_list) > 4:
+            value = my_list[1]
+            if not isinstance(value, int):
+                raise TypeError("y must be an integer")
+            elif value < 0:
+                raise ValueError("y must be > 0")
+            else:
+                self.__y = value
+
     def __str__(self):
         """
         prints string if class
