@@ -61,7 +61,6 @@ class Square(Rectangle):
                 elif k == "y":
                     self.y = v
 
-
     def __str__(self):
         return ("[{}] ({}) {}/{} - {}".format(type(self).__name__,
                 self.id, self.x,
