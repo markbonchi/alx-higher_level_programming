@@ -130,46 +130,47 @@ class Rectangle(Base):
             [print("#", end='') for i in range(self.__width)]
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         updates private attributes in class
+
+        args:
+            *args: (list)
+            **kwarg: (dictionary)
         """
-        my_list = []
-        [my_list.append(i) for i in args]
-        if len(my_list) > 0:
-            self.id = my_list[0]
-        if len(my_list) > 1:
-            value = my_list[1]
-            if not isinstance(value, int):
-                raise TypeError("width must be an integer")
-            elif value < 0:
-                raise ValueError("width must be > 0")
-            else:
-                self.__width = value
-        if len(my_list) > 2:
-            value = my_list[2]
-            if not isinstance(value, int):
-                raise TypeError("height must be an integer")
-            elif value < 0:
-                raise ValueError("height must be > 0")
-            else:
-                self.__height = value
-        if len(my_list) > 3:
-            value = my_list[3]
-            if not isinstance(value, int):
-                raise TypeError("x must be an integer")
-            elif value < 0:
-                raise ValueError("x must be > 0")
-            else:
-                self.__x = value
-        if len(my_list) > 4:
-            value = my_list[1]
-            if not isinstance(value, int):
-                raise TypeError("y must be an integer")
-            elif value < 0:
-                raise ValueError("y must be > 0")
-            else:
-                self.__y = value
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def __str__(self):
         """
