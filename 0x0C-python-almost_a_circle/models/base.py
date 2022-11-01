@@ -7,7 +7,6 @@ import csv
 import turtle
 
 
-
 class Base:
     """
     Base class for all other classes in this project
@@ -17,7 +16,6 @@ class Base:
         id: (int) object id
     """
 
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -26,7 +24,7 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -86,7 +84,8 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         try:
             with open(filename, "r", encoding="utf-8") as f:
-                return [cls.create(**i) for i in cls.from_json_string(f.read())]
+                return [cls.create(**i)
+                        for i in cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
 
