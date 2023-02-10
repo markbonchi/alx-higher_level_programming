@@ -2,9 +2,13 @@
 /* display the status code of a GET request.
 */
 
-const https = require('https');
+const request = require('request');
 const url = process.argv[2];
 
-https.get(url, (res) => {
-  console.log(`code: ${res.statusCode}`);
+request(url, (err, res) => {
+  if (err) {
+    condole.error(err);  
+  } else {
+    console.log(`code: ${res.statusCode}`);
+  }
 });
