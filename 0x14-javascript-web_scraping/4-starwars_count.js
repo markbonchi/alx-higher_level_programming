@@ -8,12 +8,12 @@ request(API_URL, (err, res, body) => {
     console.error(err);
   } else if (res.statusCode === 200) {
     const responseJSON = JSON.parse(body);
-    //console.log(responseJSON.results)
-    result = responseJSON.results;
+    // console.log(responseJSON.results)
+    const result = responseJSON.results;
     let count = 0;
     result.forEach(element => {
-      //console.log(element.characters);
-      //element.forEach(value => {value == '/.\/18\/$/' ? i++ : i = i});
+      // console.log(element.characters);
+      // element.forEach(value => {value == '/.\/18\/$/' ? i++ : i = i});
       const characters = element.characters;
       for (const indx in characters) {
         if (characters[indx].includes('18')) { count++; }
