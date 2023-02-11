@@ -9,7 +9,7 @@ request(url, (err, res, body) => {
   } else if (res.statusCode === 200) {
     const bodyJSON = JSON.parse(body);
     // console.log(bodyJSON);
-    var tempList = {};
+    const tempList = {};
     for (const i in bodyJSON) {
       const task = bodyJSON[i];
       if (task.completed === true) {
