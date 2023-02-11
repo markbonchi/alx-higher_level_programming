@@ -22,6 +22,6 @@ request(url, (err, res, body) => {
     }
     console.log(tempList);
   } else {
-    console.log(`Error code: ${res.statusCode}`)
+    console.log(`Error code: ${res.statusCode}`);
   }
 });
